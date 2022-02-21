@@ -1,0 +1,17 @@
+.cache/
+.tmp-*/
+
+wp/wp-config.php
+wp/wp-content/uploads/
+wp/wp-content/_uploads*/
+wp/wp-content/cache/
+
+wp/wp-content/themes/deliv_2203/assets/**/*.css
+wp/wp-content/themes/deliv_2203/assets/**/*.js
+wp/wp-content/themes/deliv_2203/assets/**/*.jpg
+wp/wp-content/themes/deliv_2203/assets/**/*.png
+wp/wp-content/themes/deliv_2203/assets/**/*.gif
+wp/wp-content/themes/deliv_2203/assets/**/*.svg
+wp/wp-content/themes/deliv_2203/assets/**/*.ico
+wp/wp-content/themes/deliv_2203/assets/**/*.pdf
+*.md
