@@ -1,0 +1,245 @@
+@charset 'UTF-8';
+@import "../../_module/base.scss";
+
+/* === top === */
+
+main {
+  @include breakPc() {
+    margin-top: 120px;
+  }
+  @include breakSp() {
+    margin-top: 80px;
+  }
+}
+.wp-login main {
+  @include breakPc() {
+    margin-top: 88px;
+  }
+  @include breakSp() {
+    margin-top: 34px;
+  }
+}
+
+/* .top-mv */
+
+.top-mv {
+  width: 100%;
+  background-image: url("/wp-content/themes/deliv_2203/assets/top/images/kv.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include breakPc() {
+    height: 500px;
+    padding-top: 200px;
+  }
+  @include breakSp() {
+    height: 300px;
+    padding: 100px 16px 0;
+  }
+}
+.top-mv > h1 {
+  text-align: center;
+  color: #fff;
+  @include breakPc() {
+    font-size: 6.4rem;
+  }
+  @include breakSp() {
+    font-size: 3.8rem;
+  }
+}
+.top-mv > p {
+  text-align: center;
+  color: #fff;
+  @include breakPc() {
+    margin-top: 16px;
+    font-size: 2.8rem;
+  }
+  @include breakSp() {
+    font-size: 1.8rem;
+  }
+}
+
+/* .top-news */
+
+.top-news {
+  margin-top: 64px;
+}
+
+.top-newsWrap {
+  @include breakPc() {
+    margin-top: 48px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.top-newsWrap > a {
+  display: flex;
+  align-items: center;
+  transition: .2s;
+  @include breakPc() {
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    font-size: 1.2rem;
+  }
+}
+.top-newsWrap > a:hover {
+  opacity: .4;
+}
+.top-newsWrap > a + * {
+  @include breakPc() {
+    margin-top: 16px;
+  }
+  @include breakSp() {
+    margin-top: 8px;
+  }
+}
+.top-newsWrap > a > .day {
+  display: block;
+  color: gray;
+}
+.top-newsWrap > a > .label {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #fff;
+  background-color: gray;
+  @include breakPc() {
+    margin: 0 16px;
+    padding: 4px 6px;
+    font-size: 1.2rem;
+  }
+  @include breakSp() {
+    margin: 0 8px;
+    padding: 2px 4px;
+    font-size: 1rem;
+  }
+}
+
+/* .top-about */
+
+.top-about {
+  @include breakPc() {
+    margin-top: 100px;
+  }
+  @include breakSp() {
+    margin-top: 50px;
+  }
+}
+
+.top-aboutWrap {
+  @include breakPc() {
+    margin-top: 48px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.top-aboutWrap > p {
+  @include breakPc() {
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    font-size: 1.4rem;
+  }
+}
+.top-aboutWrap > p + * {
+  @include breakPc() {
+    margin-top: 16px;
+  }
+  @include breakSp() {
+    margin-top: 12px;
+  }
+}
+
+/* .top-recruit */
+
+.top-recruit {
+  @include breakPc() {
+    margin-top: 100px;
+  }
+  @include breakSp() {
+    margin-top: 50px;
+  }
+}
+
+.top-recruitWrap {
+  @include breakPc() {
+    margin-top: 48px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.top-recruitWrap > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-family: "Noto Sans JP", sans-serif;
+  color: $mainColor;
+  overflow: hidden;
+  border: 2px solid $mainColor;
+  transition: .2s;
+  @include breakPc() {
+    width: 246px;
+    height: 50px;
+    padding-left: 12px;
+    font-size: 1.8rem;
+  }
+  @include breakSp() {
+    width: 190px;
+    height: 40px;
+    padding-left: 8px;
+    font-size: 1.4rem;
+  }
+}
+.top-recruitWrap > a:hover {
+  color: #fff;
+}
+.top-recruitWrap > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background-image: url("/wp-content/themes/deliv_2203/assets/common/images/ic_arrow_02.svg");
+  background-size: cover;
+  transition: .2s;
+  @include breakPc() {
+    right: 10px;
+    width: 24px;
+    height: 24px;
+  }
+  @include breakSp() {
+    right: 5px;
+    width: 16px;
+    height: 16px;
+  }
+}
+.top-recruitWrap > a:hover::before {
+  background-image: url("/wp-content/themes/deliv_2203/assets/common/images/ic_arrow_01.svg");
+}
+.top-recruitWrap > a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 246px;
+  height: 50px;
+  background-color: $mainColor;
+  transform: translateX(-100%);
+  transition: .5s;
+  z-index: -1;
+  @include breakPc() {
+    width: 246px;
+    height: 50px;
+  }
+  @include breakSp() {
+    width: 190px;
+    height: 40px;
+  }
+}
+.top-recruitWrap > a:hover::after {
+  transform: translateX(0);
+}

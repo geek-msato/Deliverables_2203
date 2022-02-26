@@ -1,1 +1,47 @@
 @charset 'UTF-8';
+@import "./base.scss";
+
+/* .sw-Heading */
+
+.sw-Heading_type01 {
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  @include breakPc() {
+    padding-bottom: 16px;
+    font-size: 3.2rem;
+  }
+  @include breakSp() {
+    padding-bottom: 8px;
+    font-size: 2rem;
+  }
+}
+.sw-Heading_type01::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: $mainColor;
+  @include breakPc() {
+    width: 50px;
+    height: 4px;
+  }
+  @include breakSp() {
+    width: 30px;
+    height: 3px;
+  }
+}
+.sw-Heading_type01 > * {
+  display: block;
+  font-weight: 500;
+  @include breakPc() {
+    margin-top: 10px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    font-size: 1.2rem;
+  }
+}
