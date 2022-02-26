@@ -1,23 +1,41 @@
 @charset 'UTF-8';
+@import "./base.scss";
+
+/* 共通パーツ */
 
 .st-Inner {
-  max-width: 1080px;
-  margin: 0 auto;
+  @include breakPc() {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  @include breakSp() {
+    margin: 0 16px;
+  }
 }
 
 /* .st-Header */
 
 .st-Header {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 30px 4% 10px;
+  padding: 20px 4%;
   background-color: #fff;
+  z-index: 9999;
 }
 
 .st-Header_Logo {
-  width: 80px;
-  height: 80px;
+  @include breakPc() {
+    width: 80px;
+    height: 80px;
+  }
+  @include breakSp() {
+    width: 40px;
+    height: 40px;
+  }
 }
 .st-Header_Logo a {
   display: block;
@@ -28,41 +46,175 @@
 }
 
 .st-Header_Btn {
-  display: none;
+  @include breakPc() {
+    display: none;
+  }
+  @include breakSp() {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 300;
+  }
+}
+
+.st-Header_Btn .hamburger-line {
+  @include breakSp() {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: $mainColor;
+    transition: .5s;
+  }
+}
+.st-Header_Btn .hamburger-line_1 {
+  @include breakSp() {
+    top: 1px;
+  }
+}
+.st-Header_Btn .hamburger-line_2 {
+  @include breakSp() {
+    top: 12px;
+  }
+}
+.st-Header_Btn .hamburger-line_3 {
+  @include breakSp() {
+    top: 24px;
+  }
+}
+.open .st-Header_Btn .hamburger-line_1 {
+  @include breakSp() {
+    top: 8px;
+    transform: rotate(-45deg);
+  }
+}
+.open .st-Header_Btn .hamburger-line_2 {
+  @include breakSp() {
+    opacity: 0;
+  }
+}
+.open .st-Header_Btn .hamburger-line_3 {
+  @include breakSp() {
+    top: 8px;
+    transform: rotate(45deg);
+  }
+}
+
+.st-Header_NavWrap {
+  @include breakPc() {
+    margin-left: auto;
+  }
 }
 
 .st-Header_Nav {
-  margin-left: auto;
+  @include breakSp() {
+    position: fixed;
+    right: -100%;
+    top: 80px;
+    width: 100%;
+    height: 100vh;
+    padding-top: 30px;
+    background-color: #fff;
+    transition: .5s;
+    z-index: 200;
+    overflow-y: scroll;
+  }
+}
+.open .st-Header_Nav {
+  @include breakSp() {
+    right: 0;
+  }
 }
 
 .st-Header_List {
-  display: flex;
-  align-items: center;
+  @include breakPc() {
+    display: flex;
+    align-items: center;
+  }
+  @include breakSp() {
+    display: block;
+  }
+}
+.st-Header_List > li {
+  @include breakSp() {
+    text-align: center;
+  }
 }
 .st-Header_List > li + li {
-  margin-left: 32px;
+  @include breakPc() {
+    margin-left: 32px;
+  }
+  @include breakSp() {
+    margin-top: 24px;
+  }
 }
 .st-Header_List > li a {
-  display: block;
-  font-size: 1.8rem;
+  display: inline-block;
+  padding: 12px 20px 8px;
   font-weight: 500;
+  border-radius: 32px;
   transition: .4s;
+  @include breakPc() {
+    font-size: 1.8rem;
+  }
+  @include breakSp() {
+    font-size: 1.6rem;
+  }
 }
 .st-Header_List > li a:hover {
-  opacity: .4;
+  @include breakPc() {
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .16);
+  }
+  @include breakSp() {
+    opacity: .4;
+  }
+}
+
+.st-Header_List > li.st-Header_Entry a {
+  color: #fff;
+  background-color: $mainColor;
+}
+.st-Header_List > li.st-Header_Entry a:hover {
+  color: $mainColor;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 1px $mainColor;
+  @include breakSp() {
+    opacity: 1;
+  }
 }
 
 /* .st-Footer */
 
 .st-Footer {
   padding: 30px 4% 10px;
-  background-color: #0a0a5c;
+  background-color: $mainColor;
   color: #fff;
+  @include breakPc() {
+    margin-top: 80px;
+  }
+  @include breakSp() {
+    margin-top: 64px;
+  }
+}
+
+.st-Footer_Inn {
+  display: flex;
+  align-items: center;
 }
 
 .st-Footer_Logo {
-  width: 80px;
-  height: 80px;
+  @include breakPc() {
+    width: 80px;
+    height: 80px;
+  }
+  @include breakSp() {
+    width: 40px;
+    height: 40px;
+  }
 }
 .st-Footer_Logo a {
   display: block;
@@ -73,7 +225,12 @@
 }
 
 .st-Footer_Nav {
-  margin-left: 32px;
+  @include breakPc() {
+    margin-left: 48px;
+  }
+  @include breakSp() {
+    margin-left: 32px;
+  }
 }
 .st-Footer_List {
   display: flex;
@@ -81,15 +238,30 @@
 }
 
 .st-Footer_List li + li {
-  margin-top: 28px;
+  @include breakPc() {
+    margin-left: 28px;
+  }
+  @include breakSp() {
+    margin-left: 10px;
+  }
 }
 .st-Footer_List li a {
-  font-size: 1.6rem;
+  transition: .4s;
+  @include breakPc() {
+    font-size: 1.2rem;
+  }
+  @include breakSp() {
+    font-size: 1rem;
+  }
+}
+.st-Footer_List li a:hover {
+  opacity: .4;
 }
 
 .st-Copy {
   width: 100%;
-  text-align: center;
+  margin-top: 16px;
   padding-top: 8px;
+  text-align: center;
   border-top: 1px solid #fff;
 }

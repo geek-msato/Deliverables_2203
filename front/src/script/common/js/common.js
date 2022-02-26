@@ -1,1 +1,1 @@
-import '../../_modules/modules';
+import '../../_modules/sp_nav';
