@@ -1,0 +1,185 @@
+@charset 'UTF-8';
+@import "../../_module/base.scss";
+
+/* === news === */
+
+/*
+  news 共通
+*/
+
+main {
+  @include breakPc() {
+    margin-top: 120px;
+  }
+  @include breakSp() {
+    margin-top: 80px;
+  }
+}
+.wp-login main {
+  @include breakPc() {
+    margin-top: 88px;
+  }
+  @include breakSp() {
+    margin-top: 34px;
+  }
+}
+
+/* .news-Wrap */
+
+.news-wrap {
+  @include breakPc() {
+    margin-top: 60px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.news-wrap > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $mainColor;
+  @include breakPc() {
+    font-size: 3.2rem;
+  }
+  @include breakSp() {
+    font-size: 2rem;
+  }
+}
+.news-wrap > h2 > img {
+  display: block;
+  @include breakPc() {
+    width: 60px;
+    margin-right: 16px;
+  }
+  @include breakSp() {
+    width: 40px;
+    margin-right: 8px;
+  }
+}
+
+/*
+  news 一覧
+*/
+
+/* .news-index */
+
+.news-index {
+  @include breakPc() {
+    margin-top: 60px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+
+.news-indexList li + li {
+  @include breakPc() {
+    margin-top: 32px;
+  }
+  @include breakSp() {
+    margin-top: 16px;
+  }
+}
+.news-indexList li > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  @include breakPc() {
+    padding-bottom: 16px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    padding-bottom: 8px;
+    font-size: 1.2rem;
+  }
+}
+.news-indexList li > a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: $mainColor;
+  border-radius: 4px;
+  transition: all .4s;
+}
+.news-indexList li > a:hover::before {
+  left: 0;
+}
+.news-indexList li > a .day {
+  display: block;
+  color: gray;
+}
+.news-indexList li > a .label {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #fff;
+  background-color: gray;
+  @include breakPc() {
+    margin: 0 16px;
+    padding: 4px 6px;
+    font-size: 1.2rem;
+  }
+  @include breakSp() {
+    margin: 0 8px;
+    padding: 2px 4px;
+    font-size: 1rem;
+  }
+}
+
+.news-indexImg {
+  position: relative;
+  height: auto;
+  margin-right: 16px;
+  @include breakPc() {
+    width: 160px;
+  }
+  @include breakSp() {
+    width: 100px;
+  }
+}
+.news-indexImg::before {
+  content: "";
+  display: block;
+  padding-top: 66.25%;
+}
+.news-indexImg img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin: auto;
+}
+
+/*
+  news 記事
+*/
+
+/* .news-content */
+
+.news-content {
+  @include breakPc() {
+    margin-top: 60px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.news-content p {
+  @include breakPc() {
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+  }
+}

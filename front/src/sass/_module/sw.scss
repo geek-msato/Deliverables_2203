@@ -45,3 +45,77 @@
     font-size: 1.2rem;
   }
 }
+
+
+/* .sw-Mv */
+
+.sw-Mv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: url("/wp-content/themes/deliv_2203/assets/common/images/img_head.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  @include breakPc() {
+    height: 500px;
+  }
+  @include breakSp() {
+    height: 200px;
+  }
+}
+.sw-Mv > h1 {
+  font-weight: 700;
+  color: #fff;
+  @include breakPc() {
+    font-size: 6rem;
+  }
+  @include breakSp() {
+    font-size: 3.2rem;
+  }
+}
+
+/* .breadcrumb */
+
+.breadcrumb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, .3);
+  color: #fff;
+  @include breakPc() {
+    padding: 8px 40px;
+    font-size: 1.4rem;
+  }
+  @include breakSp() {
+    padding: 4px 20px;
+    font-size: 1.2rem;
+  }
+}
+
+.breadcrumb-menu {
+  display: flex;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.breadcrumb-menu li + li {
+  position: relative;
+  @include breakPc() {
+    margin-left: 16px;
+  }
+  @include breakSp() {
+    margin-left: 8px;
+  }
+}
+.breadcrumb-menu li + li::before {
+  content: "＞";
+  @include breakPc() {
+    padding-right: 16px;
+  }
+  @include breakSp() {
+    padding-right: 8px;
+  }
+}

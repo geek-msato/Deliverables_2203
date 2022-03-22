@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/common/css/common.css">
 	<?php if (is_front_page()): ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/top/css/top.css">
+	<?php elseif (is_archive('news') || is_singular('news')): ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/news/css/news.css">
 	<?php endif; ?>
 	<?php if (is_front_page()): ?>
 	<meta name="description" content="2022年3月成果物。採用サイトを作成しました。">

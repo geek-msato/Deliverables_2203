@@ -12,16 +12,32 @@ get_header();
       <section class="top-news st-Inner">
         <h2 class="sw-Heading_type01">NEWS<span>ニュース</span></h2>
         <div class="top-newsWrap">
-          <a href="#">
-            <span class="day">2022/01/01</span>
-            <span class="label">お知らせ</span>
-            Lorem ipsum dolor sit amet
+          <?php
+            $per_page = 2;
+            $args_news = array(
+              'post_type' => 'news',
+              'posts_per_page' => $per_page,
+              'paged' => $paged,
+            );
+            $posts_news = new WP_Query($args_news);
+            $pages = $the_query->max_num_pages;
+            $wp_query->max_num_pages = $pages;
+            if ($posts_news->have_posts()) :
+              while ($posts_news->have_posts()) : $posts_news->the_post();
+              $post_id = get_the_id();
+          ?>
+          <a href="<?php echo get_permalink(); ?>">
+            <span class="day"><?php the_time('Y/m/d'); ?></span>
+            <?php
+              $cat_terms = get_the_terms( $post->ID, 'cat_news' );
+              if ($cat_terms && ! is_wp_error($cat_terms)):
+            ?>
+            <?php foreach($cat_terms as $cat_term): ?>
+            <span class="label"><?php echo $cat_term->name; ?></span>
+            <?php endforeach; endif; ?>
+            <?php echo get_the_title(); ?>
           </a>
-          <a href="#">
-            <span class="day">2022/01/01</span>
-            <span class="label">お知らせ</span>
-            Lorem ipsum dolor sit amet
-          </a>
+          <?php endwhile; endif; ?>
         </div>
       </section>
       <!-- /.top-news -->
