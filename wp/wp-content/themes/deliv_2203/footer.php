@@ -1,4 +1,4 @@
-		<footer class="st-Footer">
+		<footer class="st-Footer" id="footer">
 			<div class="st-Footer_Inn">
 				<div class="st-Footer_Logo">
 					<a href="<?php echo home_url(); ?>">
@@ -14,6 +14,9 @@
 			</div>
 			<p class="st-Copy">&copy; 2022 Mikaze Sato.</p>
 		</footer>
+		<div class="st-scroll" id="js-scroll">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/common/images/ic_top.png" alt="" loading="lazy">
+		</div>
 
 		<?php wp_footer(); ?>
 		<script src="<?php echo get_template_directory_uri(); ?>/assets/common/js/common.js"></script>

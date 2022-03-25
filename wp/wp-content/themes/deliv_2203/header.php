@@ -30,7 +30,7 @@
 	<?php else: ?>
 	<body id="body">
 	<?php endif; ?>
-		<header class="st-Header">
+		<header class="st-Header" id="header">
 			<div class="st-Header_Logo">
 				<a href="<?php echo home_url(); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/common/images/logo.png" alt="deliv2203">

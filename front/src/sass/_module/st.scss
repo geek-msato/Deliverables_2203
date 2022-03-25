@@ -266,3 +266,38 @@
   text-align: center;
   border-top: 1px solid #fff;
 }
+
+/* .st-scroll */
+
+.st-scroll {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+  @include breakPc() {
+    width: 50px;
+    height: 50px;
+  }
+  @include breakSp() {
+    width: 30px;
+    height: 30px;
+  }
+}
+.st-scroll:hover {
+  transform: scale(1.2);
+}
+.st-scroll.show {
+  opacity: 1;
+}
+.st-scroll.absolute {
+  position: absolute;
+  @include breakPc() {
+    bottom: 186px;
+  }
+  @include breakSp() {
+    bottom: 146px;
+  }
+}
