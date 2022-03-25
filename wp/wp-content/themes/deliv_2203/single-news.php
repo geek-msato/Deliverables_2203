@@ -20,7 +20,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
   </div>
 
   <div class="news-wrap st-Inner">
-    <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/news/images/ic_news.svg" alt="" loading="lazy"><?php echo get_the_title(); ?></h2>
+    <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/news/images/ic_news.png" alt="" loading="lazy"><?php echo get_the_title(); ?></h2>
     <div class="news-content">
       <?php echo get_the_content(); ?>
     </div>

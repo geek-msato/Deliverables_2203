@@ -16,12 +16,17 @@ function urlRewrite(){
   // ニュース
   add_rewrite_rule('news/article-([0-9]+)/?$', 'index.php?post_type=news&p=$matches[1]', 'top');
   add_rewrite_rule('news/cat_news/([^/]+)/page/([0-9]+)/?$', 'index.php?cat_news=$matches[1]', 'top');
+  // 採用情報
+  add_rewrite_rule('recruit/article-([0-9]+)/?$', 'index.php?post_type=recruit&p=$matches[1]', 'top');
+  add_rewrite_rule('recruit/cat_recruit/([^/]+)/page/([0-9]+)/?$', 'index.php?cat_recruit=$matches[1]', 'top');
 }
 add_action( 'init', 'urlRewrite' );
 
 function rewrite_term_links($termlink, $term, $taxonomy) {
   if ($taxonomy === 'cat_news') {
     return ($taxonomy === 'cat_news' ? home_url('/news/cat_news/'. $term->slug) : $termlink);
+  } elseif ($taxonomy === 'cat_recruit') {
+    return ($taxonomy === 'cat_recruit' ? home_url('/recruit/cat_recruit/'. $term->slug) : $termlink);
   }
 }
 add_filter( 'term_link', 'rewrite_term_links', 10, 3 );
