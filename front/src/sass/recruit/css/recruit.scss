@@ -69,6 +69,7 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 60px;
   }
   @include breakSp() {

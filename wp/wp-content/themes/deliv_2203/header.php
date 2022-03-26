@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/news/css/news.css">
 	<?php elseif (is_post_type_archive('recruit') || is_singular('recruit')): ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/recruit/css/recruit.css">
+	<?php elseif (is_page('entry')): ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/entry/css/entry.css">
 	<?php endif; ?>
 	<?php if (is_front_page()): ?>
 	<meta name="description" content="2022年3月成果物。採用サイトを作成しました。">

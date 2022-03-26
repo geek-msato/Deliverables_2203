@@ -1,0 +1,223 @@
+@charset 'UTF-8';
+@import "../../_module/base.scss";
+
+/* === entry === */
+
+/*
+  entry 共通
+*/
+
+main {
+  @include breakPc() {
+    margin-top: 120px;
+  }
+  @include breakSp() {
+    margin-top: 80px;
+  }
+}
+.wp-login main {
+  @include breakPc() {
+    margin-top: 88px;
+  }
+  @include breakSp() {
+    margin-top: 34px;
+  }
+}
+
+/* .entry-Wrap */
+
+.entry-wrap {
+  @include breakPc() {
+    margin-top: 60px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.entry-wrap > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $mainColor;
+  @include breakPc() {
+    font-size: 3.2rem;
+  }
+  @include breakSp() {
+    font-size: 2rem;
+  }
+}
+.entry-wrap > h2 > img {
+  display: block;
+  @include breakPc() {
+    width: 60px;
+    margin-right: 16px;
+  }
+  @include breakSp() {
+    width: 40px;
+    margin-right: 8px;
+  }
+}
+
+/* .entry-form */
+
+.entry-form {
+  width: 100%;
+  @include breakPc() {
+    margin-top: 60px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.entry-form tr {
+  border-bottom: 1px solid #e3e3e3;
+  font-family: "Noto Sans JP", sans-serif;
+  @include breakPc() {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    padding-bottom: 32px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    display: block;
+    margin-top: 16px;
+    padding-bottom: 16px;
+    font-size: 1.4rem;
+  }
+}
+.entry-form th {
+  @include breakPc() {
+    width: 180px;
+    margin-right: 30px;
+  }
+  @include breakSp() {
+    display: block;
+  }
+}
+.entry-form td {
+  @include breakPc() {
+    width: calc(100% - 210px);
+  }
+  @include breakSp() {
+    display: block;
+    margin-top: 8px;
+  }
+}
+.entry-form td select {
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  @include breakPc() {
+    max-width: 300px;
+    padding: 10px 16px;
+  }
+  @include breakSp() {
+    max-width: 150px;
+    padding: 5px 8px;
+  }
+}
+.entry-form td input {
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  @include breakPc() {
+    max-width: 300px;
+    margin-right: 16px;
+    padding: 10px 16px;
+  }
+  @include breakSp() {
+    max-width: 150px;
+    margin-right: 8px;
+    padding: 5px 8px;
+  }
+}
+
+/* .entry-privacy */
+
+.entry-privacy {
+  @include breakPc() {
+    margin-top: 60px;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+  }
+}
+.entry-privacy h3 {
+  text-align: center;
+  font-weight: 700;
+  @include breakPc() {
+    font-size: 1.8rem;
+  }
+  @include breakSp() {
+    font-size: 1.6rem;
+  }
+}
+
+.entry-privacyContent {
+  overflow-y: scroll;
+  border: 1px solid #e3e3e3;
+  @include breakPc() {
+    max-width: 500px;
+    height: 200px;
+    margin: 32px auto 0;
+    padding: 10px 16px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    height: 150px;
+    margin-top: 16px;
+    padding: 5px 8px;
+    font-size: 1.4rem;
+  }
+}
+
+/* .entry-agree */
+
+.entry-agree {
+  text-align: center;
+  @include breakPc() {
+    margin-top: 24px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    margin-top: 16px;
+    font-size: 1.4rem;
+  }
+}
+.entry-agree label {
+  cursor: pointer;
+}
+
+/* .entry-submit */
+
+.entry-submit {
+  text-align: center;
+}
+.entry-submit input {
+  color: #fff;
+  font-weight: 700;
+  background-color: $mainColor;
+  pointer-events: none;
+  @include breakPc() {
+    margin-top: 32px;
+    padding: 10px 24px;
+    font-size: 2rem;
+    border-radius: 32px;
+  }
+  @include breakSp() {
+    margin-top: 24px;
+    padding: 10px 24px;
+    font-size: 1.6rem;
+    border-radius: 32px;
+  }
+}
+.entry-submit p {
+  color: red;
+  @include breakPc() {
+    margin-top: 16px;
+    font-size: 1.2rem;
+  }
+  @include breakSp() {
+    margin-top: 8px;
+    font-size: 1rem;
+  }
+}
