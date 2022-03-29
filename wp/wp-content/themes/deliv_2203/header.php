@@ -24,6 +24,7 @@
 	<?php if (is_front_page()): ?>
 	<meta name="description" content="2022年3月成果物。採用サイトを作成しました。">
 	<?php endif; ?>
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/common/images/favicon.ico">
 	<?php wp_head(); ?>
 	</head>
 
