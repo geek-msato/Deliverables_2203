@@ -32,6 +32,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
       </div>
       <?php endif; ?>
 
+      <h3>募集要項</h3>
       <?php if (get_field('recruit_field')): ?>
       <div class="recruit-contentField">
         <?php while (the_repeater_field('recruit_field')): ?>
@@ -42,6 +43,24 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <?php endwhile; ?>
       </div>
       <?php endif; ?>
+
+      <?php if(have_rows('recruit_message')): ?>
+      <h3>採用担当者からのメッセージ</h3>
+      <?php while(have_rows('recruit_message')): the_row(); ?>
+      <div class="recruit-message">
+      <?php if(get_row_layout() == 'layout_editor'): ?>
+        <div>
+          <?php the_sub_field('editor'); ?>
+        </div>
+      <?php elseif(get_row_layout() == 'layout_image_editor'): ?>
+        <img src="<?php the_sub_field('image'); ?>" alt="">
+        <div>
+          <?php the_sub_field('editor'); ?>
+        </div>
+      <?php endif; ?>
+      </div>
+      <?php endwhile; endif; ?>
+
 
       <h3>関連する採用情報</h3>
       <div class="recruit-index">

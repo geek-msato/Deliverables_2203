@@ -177,6 +177,17 @@ main {
     margin-top: 32px;
   }
 }
+.recruit-content > h3 {
+  color: #0a0a5c;
+  @include breakPc() {
+    margin-top: 120px;
+    font-size: 3.2rem;
+  }
+  @include breakSp() {
+    margin-top: 80px;
+    font-size: 2rem;
+  }
+}
 
 .recruit-detail {
   @include breakPc() {
@@ -205,6 +216,8 @@ main {
   font-size: 1.2rem;
 }
 
+/* .recruit-contentField */
+
 .recruit-contentField {
   @include breakPc() {
     margin-top: 60px;
@@ -214,18 +227,6 @@ main {
     margin-top: 32px;
     font-size: 1.4rem;
   }
-}
-.recruit-contentField + h3 {
-  color: #0a0a5c;
-  @include breakPc() {
-    margin-top: 120px;
-    font-size: 3.2rem;
-  }
-  @include breakSp() {
-    margin-top: 80px;
-    font-size: 2rem;
-  }
-
 }
 .recruit-contentField dl {
   display: flex;
@@ -257,6 +258,57 @@ main {
   @include breakSp() {
     width: 70%;
     padding: 16px;
+    font-size: 1.4rem;
+  }
+}
+
+/* .recruit-message */
+
+.recruit-message {
+  @include breakPc() {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 60px;
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
+    margin-top: 32px;
+    font-size: 1.4rem;
+  }
+}
+.recruit-message img {
+  display: block;
+  max-width: 200px;
+  @include breakPc() {
+    margin-right: 40px;
+  }
+  @include breakSp() {
+    margin: 0 auto;
+  }
+}
+.recruit-message h4 {
+  font-weight: 700;
+  @include breakPc() {
+    font-size: 2rem;
+  }
+  @include breakSp() {
+    margin-top: 16px;
+    font-size: 1.8rem;
+  }
+}
+.recruit-message h4 + p {
+  @include breakPc() {
+    margin-bottom: 16px;
+  }
+  @include breakSp() {
+    margin-bottom: 12px;
+  }
+}
+.recruit-message p {
+  @include breakPc() {
+    font-size: 1.6rem;
+  }
+  @include breakSp() {
     font-size: 1.4rem;
   }
 }
